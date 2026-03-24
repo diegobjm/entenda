@@ -2,6 +2,7 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
+  <!-- ESTA É A LINHA MÁGICA QUE RESOLVE O PROBLEMA NO TELEMÓVEL -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entenda o Legislativo – Apresentação e Comissões</title>
    <style>
@@ -195,7 +196,6 @@
     padding: 14px 24px;
     border: 4px solid #2c274c; /* Borda grossa azul escuro */
     border-radius: 16px; /* Cantos arredondados */
-    background: #a6c76a; /* Verde lima mais suave e desaturado (Aprovado) */
     color: #2c274c; /* Texto azul escuro */
     font-size: 18px;
     font-weight: 700; /* Texto a negrito */
@@ -205,25 +205,34 @@
   }
 
   .cta-buttons button:hover {
-    background: #b2ce7c; /* Fica ligeiramente mais claro ao passar o rato (Verde) */
     transform: translate(-2px, -2px); /* Levanta-se um pouco */
     box-shadow: 6px 8px 0px #2c274c; /* A sombra aumenta */
   }
 
-  /* Amarelo suave para "Recurso ao Plenário" (2º botão) */
-  .cta-buttons button:nth-child(2) {
-    background: #ebd15b;
+  /* --- CORES DE CADA BOTÃO (Edite aqui) --- */
+  
+  /* 1. Botão Aprovado */
+  .cta-buttons .btn-aprovado {
+    background: #a6c76a; /* Cor normal (Verde) */
   }
-  .cta-buttons button:nth-child(2):hover {
-    background: #f0d873;
+  .cta-buttons .btn-aprovado:hover {
+    background: #b2ce7c; /* Cor ao passar o rato */
   }
 
-  /* Vermelho suave para "Rejeitado" (3º botão) */
-  .cta-buttons button:nth-child(3) {
-    background: #e36868;
+  /* 2. Botão Recurso */
+  .cta-buttons .btn-recurso {
+    background: #ebd15b; /* Cor normal (Amarelo) */
   }
-  .cta-buttons button:nth-child(3):hover {
-    background: #e87a7a;
+  .cta-buttons .btn-recurso:hover {
+    background: #f0d873; /* Cor ao passar o rato */
+  }
+
+  /* 3. Botão Rejeitado */
+  .cta-buttons .btn-rejeitado {
+    background: #e36868; /* Cor normal (Vermelho) */
+  }
+  .cta-buttons .btn-rejeitado:hover {
+    background: #e87a7a; /* Cor ao passar o rato */
   }
 
   .cta-buttons button:active {
@@ -236,8 +245,10 @@
     .main-title {
       font-size: 2.2rem; /* Mais pequeno para telemóveis */
       top: 70%; /* Ajusta um pouco para baixo em telemóveis */
-      -webkit-text-stroke: 1.5px #1c355c;
-      text-shadow: 4px 4px 0px #1c355c;
+      letter-spacing: normal; /* Remove o espaçamento negativo que sobrepunha as letras */
+      -webkit-text-stroke: 1px #1c355c; /* Contorno mais fino para leitura clara */
+      text-shadow: 3px 3px 0px #1c355c; /* Sombra ajustada ao novo tamanho */
+      line-height: 1.2; /* Dá um pouco mais de espaço se quebrar em duas linhas */
     }
 
     .text-block {
